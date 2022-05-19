@@ -149,15 +149,9 @@
                 Каталог автомобилей
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="/econom.html"
-                  >Эконом класс</a
-                >
-                <a class="dropdown-item" href="/comfort.html"
-                  >Комфорт+ класс</a
-                >
-                <a class="dropdown-item" href="/bissnes.html"
-                  >Бизнесс класс</a
-                >
+                <a class="dropdown-item" href="/econom.html">Эконом класс</a>
+                <a class="dropdown-item" href="/comfort.html">Комфорт+ класс</a>
+                <a class="dropdown-item" href="/bissnes.html">Бизнесс класс</a>
               </div>
             </div>
             <a
@@ -352,7 +346,7 @@
         </div>
       </div>
     </div>
-        <script>
+    <script>
       async function sendForm(form) {
         let response = await fetch("/php/reg_obr.php", {
           method: "POST",
@@ -361,7 +355,7 @@
         let result = await response.text();
         if (result == "ok") {
           alert("Вы успешно зарегистрированны");
-          location.href = "lk.php";
+          location.href = "https://orabelle.p-host.in/lk.php";
         } else {
           info.innerHTML = "Такой пользователь существует";
         }
@@ -379,6 +373,5 @@
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
- 
   </body>
 </html>
