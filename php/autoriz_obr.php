@@ -11,12 +11,14 @@ if ($mysqli == false) {
   $pass = trim($_POST['password']);
 
   $result = $mysqli->query("SELECT * FROM `users` WHERE `email` = '$email'");
+  
   $result = $result->fetch_assoc();
 
   if (password_verify($pass, $result['password'])) {
     print("ok");
     $_SESSION['name'] = $result['name'];
     $_SESSION['lastname'] = $result['lastname'];
+    $_SESSION['patronymic'] = $result['patronymic'];
     $_SESSION['email'] = $result['email'];
     $_SESSION['id'] = $result['id'];
   } else {

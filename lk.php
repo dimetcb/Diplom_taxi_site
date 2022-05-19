@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -106,7 +109,7 @@
       </div>
       <div class="col-9">
         <div class="tab-content" id="v-pills-tabContent">
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="profileTab">
             <div class="row mt-5">
               <div class="col-sm-3">
                 <img src="/img/images.png" alt="фото пользователя" width="100" height="100" />
@@ -145,7 +148,7 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="messagesTab">
             <div class="col-6 pt-2">
               <form action="">
                 <div class="form-group">
@@ -163,7 +166,7 @@
               </form>
             </div>
           </div>
-          <div class="tab-pane fade" id="v-pills-docs" role="tabpanel" aria-labelledby="v-pills-docs-tab">
+          <div class="tab-pane fade" id="v-pills-docs" role="tabpanel" aria-labelledby="docsTab">
             <div class="row docs flex-column p-5">
               <div class="col-md-4 files">
                 <h4>Карточка водителя</h4>
@@ -253,14 +256,14 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
   <script>
-    let path = location.pathname.split("/")[2];
+    let path = location.pathname.split("/")[0];
     let user;
     async function getUser() {
       let response = await fetch("/php/lk_obr.php");
       return response.json();
     }
     addEventListener('popstate', event => {
-      let pathPop = location.pathname.split("/")[2]
+      let pathPop = location.pathname.split("/")[0]
       if (pathPop == "profile") {
         $('#profileTab').tab('show');
         console.log(pathPop);
@@ -280,7 +283,6 @@
       $('#v-pills-profile').tab('show');
     } else if (path == "messages") {
       $('#v-pills-messages').tab('show');
-
       $('#v-pills-settings').tab('show');
     }
     document.getElementById(path + "Tab").classList.add("active");

@@ -32,8 +32,8 @@
     }
 
     #map {
-      height: 100%;
-      width: 100%;
+      max-width: 500px;
+      max-height: 400px;
     }
 
     @media (max-width: 576px) {
@@ -41,6 +41,10 @@
         font-size: 0.4rem;
       }
 
+      #map {
+        max-width: 200px;
+        max-height: 150px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -56,6 +60,11 @@
     @media (max-width: 393px) {
       html {
         font-size: 0.4rem;
+      }
+
+      #map {
+        max-width: 150px;
+        max-height: 150px;
       }
     }
   </style>
@@ -129,7 +138,7 @@
         <h4>Возьмите машину для работы в такси</h4>
       </span>
       <div class="title-info__list row align-items-center py-3 font-weight-bolder">
-        <div class="col-3 title-info font-weight-bolder">
+        <div class="col-md-3 title-info font-weight-bolder">
           <div class="col">
             <img class="img-responsive" src="/img/icons8-проверено-16.png" alt="marks" />
             Удобный вывод денег
@@ -191,9 +200,7 @@
               </li>
               <li class="list-group-item">6 / 1 <br />график работы</li>
             </ul>
-            <button class="btn btn-primary js-constructor-btn" data-name="Узнать подробнее об аренде" data-title="Узнать подробнее об аренде">
-              Узнать подробнее
-            </button>
+            <a class="btn btn-primary" href="#contacts-info" role="button">Узнать подробнее</a>
           </div>
         </div>
         <div class="col-mb-6 px-5 mx -5 category-card-container">
@@ -212,9 +219,7 @@
               </li>
               <li class="list-group-item">7 / 0 <br />график работы</li>
             </ul>
-            <button class="btn btn-primary js-constructor-btn" data-name="Узнать подробнее об аренде" data-title="Узнать подробнее об аренде">
-              Узнать подробнее
-            </button>
+            <a class="btn btn-primary" href="#contacts-info" role="button">Узнать подробнее</a>
           </div>
         </div>
       </div>
@@ -284,8 +289,8 @@
             <div class="form-group">
               <input type="submit" class="btn btn-danger" />
             </div>
-            <div class="col-md-2" id="map">
-              <script class="map" type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2332bba113b0aca43d160b1dc9cc45576ca0ba7b386fce6b40995f41abb146b4&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            <div class="col-md-2 mb-2" id="map">
+              <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A653e9d0cb8c0a59b44e83a1fab8e7ab89503092e243f707a87ee21f09f22bf11&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
           </form>
         </div>
