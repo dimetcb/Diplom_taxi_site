@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon-32x32.png"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/eb17427400.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Комфорт класс</title>
+    <style>
+      body {
+        justify-content: left;
+        align-items: center;
+      }
+
+      .container {
+        width: auto;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .container .card {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .container .card .face {
+        margin: 10px;
+        width: 350px;
+        height: 219px;
+        transition: 0.5s;
+      }
+
+      .container .card .face.face1 {
+        position: relative;
+        background: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        transform: translateY(100px);
+      }
+
+      .container .card:hover .face.face1.kia {
+        background-image: url(/img/komfort-1.jpg);
+        transform: translateY(0);
+      }
+      .container .card:hover .face.face1.hyuinday {
+        background-image: url(/img/komfort-2.jpg);
+        transform: translateY(0);
+      }
+      .container .card:hover .face.face1.scoda {
+        background-image: url(/img/komfort-3.jpg);
+        transform: translateY(0);
+      }
+
+      .container .card .face.face1 .content {
+        opacity: 0.2;
+        transition: 0.5s;
+      }
+
+      .container .card:hover .face.face1 .content {
+        opacity: 1;
+      }
+
+      .container .card .face.face1 .content img {
+        max-width: 100px;
+      }
+
+      .container .card .face.face1 .content h3 {
+        margin: 10px 0 0;
+        padding: 0;
+        color: #fff;
+        text-align: end;
+        font-size: 1.5em;
+      }
+
+      .container .card .face.face2 {
+        position: relative;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        transform: translateY(-100px);
+      }
+
+      .container .card:hover .face.face2 {
+        transform: translateY(0);
+      }
+
+      .container .card .face.face2 .content p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container .card .face.face2 .content a {
+        margin: 15px 0 0;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 900;
+        color: #333;
+        padding: 5px;
+        border: 1px solid #333;
+      }
+
+      .container .card .face.face2 .content a:hover {
+        background: #333;
+        color: #fff;
+      }
+      @media (max-width: 576px) {
+        html {
+          font-size: 0.4rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        html {
+          font-size: 0.6rem;
+        }
+      }
+      @media (max-width: 393px) {
+        html {
+          font-size: 0.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--================ Start Header Menu Area =================-->
+    <header>
+      <div class="container-fluide py-3">
+        <div class="row justify-content-between align-items-sm-center">
+          <div class="col-md-1 col-2 flex-grow-1 header-logo">
+            <img
+              name="logo"
+              class="img-responsive"
+              src="/img/100x100.png"
+              alt="logo taxi"
+            />
+          </div>
+          <div class="col-lg-3 col-1">
+            <strong class="font-weight-bolder text-left"
+              >Аренда автомобилей такси</strong
+            ><br />
+            <strong class="font-weight-lighter"
+              >Выгодные и честные условия</strong
+            >
+          </div>
+          <div class="col-mb-3 col-4">
+            <div class="contacts text-right">
+              <div class="contacts__text">
+                <strong>График работы:</strong> <br />ежедневно с 11:00 до 20:00
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-2">
+            <div class="contacts text-left">
+              <a href="tel:+79251001388" class="phone">+7 (925) 100-13-88</a>
+              <br /><a
+                href="https://wa.me/+79251001388"
+                class="contacts__whatsapp"
+                target="_blank"
+              >
+                <img
+                  class="img-responsive"
+                  width="18"
+                  class="img-responsive"
+                  src="/img/wa.png"
+                  alt="знак вотсапа"
+                />
+                <span>Свяжитесь с нами!</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-warning">
+        <img
+          src="/img/favicon_package_v0.16(2)/android-chrome-192x192.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        <a class="navbar-brand" href="/index.php"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Переключатель навигации"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a
+              class="nav-link active mr-5 text-dark font-weight-normal"
+              href="/index.php"
+              >Главная <span class="sr-only">(текущая)</span></a
+            >
+            <div class="dropdown mr-5">
+              <button
+                class="btn btn-primary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Каталог автомобилей
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/econom.html"
+                  >Эконом класс</a
+                >
+                <a class="dropdown-item" href="/comfort.html"
+                  >Комфорт+ класс</a
+                >
+                <a class="dropdown-item" href="/bissnes.html"
+                  >Бизнесс класс</a
+                >
+              </div>
+            </div>
+            <a
+              class="nav-link mr-5 text-dark font-weight-normal"
+              href="/about.html"
+              >О компании</a
+            >
+            <a
+              class="nav-link mr-5 text-dark font-weight-normal"
+              href="#contacts-info"
+              >Контакты</a
+            >
+            <a
+              class="nav-link mr-5 text-dark font-weight-normal"
+              href="/reg.html"
+              ><i class="fa-solid fa-user"></i> Личный кабинет</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--================ End Header Menu Area =================-->
+
+    <!-- Content start -->
+
+    <div class="container">
+      <div class="card">
+        <div class="face face1 kia">
+          <div class="content">
+            <h3>Киа Оптима</h3>
+          </div>
+        </div>
+        <div class="face face2">
+          <div class="content">
+            <p class="text-center font-weight-bolder">
+              Киа Оптима 2021 года выпуска
+            </p>
+            <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <td>Топливо:</td>
+                  <td>Бензин</td>
+                </tr>
+                <tr>
+                  <td>Трансмиссия:</td>
+                  <td>Автомат</td>
+                </tr>
+                <tr>
+                  <td>Расход топлива:</td>
+                  <td>9,2 л/100км.</td>
+                </tr>
+                <tr class="bg-info">
+                  <td>Аренда:</td>
+                  <td>2500 руб. граф. 6/1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="face face1 hyuinday">
+          <div class="content">
+            <h3>Хендай Соната</h3>
+          </div>
+        </div>
+        <div class="face face2">
+          <div class="content">
+            <p class="font-weight-bolder text-center">
+              Хендай Соната 2021 года выпуска
+            </p>
+            <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <td>Топливо:</td>
+                  <td>Бензин</td>
+                </tr>
+                <tr>
+                  <td>Трансмиссия:</td>
+                  <td>Автомат</td>
+                </tr>
+                <tr>
+                  <td>Расход топлива:</td>
+                  <td>8,2 л/100км.</td>
+                </tr>
+                <tr class="bg-info">
+                  <td>Аренда:</td>
+                  <td>2300 руб. граф. 6/1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="face face1 scoda">
+          <div class="content">
+            <h3>Шкода Октавия</h3>
+          </div>
+        </div>
+        <div class="face face2">
+          <div class="content">
+            <p class="font-weight-bolder text-center">
+              Шкода Октавия 2021 года выпуска
+            </p>
+            <table class="table table-hover">
+              <tbody>
+                <tr>
+                  <td>Топливо:</td>
+                  <td>Бензин</td>
+                </tr>
+                <tr>
+                  <td>Трансмиссия:</td>
+                  <td>Автомат</td>
+                </tr>
+                <tr>
+                  <td>Расход топлива:</td>
+                  <td>9 л/100км.</td>
+                </tr>
+                <tr class="bg-info">
+                  <td>Аренда:</td>
+                  <td>2400 руб. граф. 6/1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content end -->
+    <!-- Footer star -->
+    <footer class="text-white bg-dark" id="contacts-info">
+      <div class="container-fluid">
+        <h2 class="text-center">Связаться с нами</h2>
+        <div class="row px-5 pt-2">
+          <div class="col-md-4">
+            <h3>Контакты:</h3>
+            <h5>Адрес:</h5>
+            <p>г. Москва, ул. Проспект Вернадского, д. 6В, стр. 3</p>
+            <h5>Телефон:</h5>
+            <a href="+79251001388">+7 (925) 100-13-88</a>
+            <h5>График работы:</h5>
+            <p>
+              Понедельник - суббота: с 11-00 по 20-00, воскресенье: выходной.
+            </p>
+          </div>
+
+          <div class="col-6 pt-2">
+            <form action="">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Имя" />
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="E-mail" />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Сообщение"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-danger" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Дополнительный JavaScript; выберите один из двух! -->
+
+    <!-- Вариант 1: пакет jQuery и Bootstrap (включает Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $(".hover").hover(
+          function () {
+            $(this).addClass("flip");
+          },
+          function () {
+            $(this).removeClass("flip");
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
