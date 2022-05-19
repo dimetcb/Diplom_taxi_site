@@ -94,6 +94,7 @@
 
 <body>
   <div class="container-fluid">
+
     <div class="row mt-5">
       <div class="col-3">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -111,6 +112,13 @@
                 <img src="/img/images.png" alt="фото пользователя" width="100" height="100" />
               </div>
               <div class="col-sm-9">
+
+                <p>Имя: <span><?php echo $_SESSION['name'] ?></span>
+                </p>
+                <p>Отчество: <?php echo $_SESSION['patronymic'] ?></p>
+                <p>Фамилия: <span><?php echo $_SESSION['lastname'] ?></span>
+                </p>
+
                 <h1 id="userName"></h1>
                 <h2>Осталось дней до следующего ТО:</h2>
                 <div id="deadline-message" class="deadline-message">
@@ -197,62 +205,7 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
   <script>
-    let path = location.pathname.split("/")[2];
-    let user;
-    async function getUser() {
-      let response = await fetch("/php/lk_obr.php");
-      return response.json();
-    }
-    addEventListener('popstate', event => {
-      let pathPop = location.pathname.split("/")[2]
-      if (pathPop == "profile") {
-        $('#profileTab').tab('show');
-        console.log(pathPop);
-      } else if (pathPop == "messages") {
-        $('#messagesTab').tab('show');
-        console.log(pathPop);
-      } else if (pathPop == "settings") {
-        $('#settingsTab').tab('show');
-        console.log(pathPop);
-      }
-    });
-    if (path == "profile") {
-      getUser().then(user => {
-        userName.innerText = `${user.name} ${user.lastname}`
-      });
-      console.log(user);
-      $('#v-pills-profile').tab('show');
-    } else if (path == "messages") {
-      $('#v-pills-messages').tab('show');
-    } else if (path == "settings") {
-      getUsers().then(users => {
-        for (let i = 0; i < users.length; i++) {
-          userListTable.innerHTML += `                <tr>
-                  <th scope="row">${users[i].id}</th>
-                  <td>${users[i].name}</td>
-                  <td>${users[i].lastname}</td>
-                  <td>>${users[i].email}</td>
-                </tr>`
-        }
-      })
-      $('#v-pills-settings').tab('show');
-    } else {
-      location.href = location.protocol + "//" + location.host;
-    }
-    document.getElementById(path + "Tab").classList.add("active");
-    let navLinks = document.querySelectorAll(".nav-link");
-    for (let i = 0; i < navLinks.length; i++) {
-      navLinks[i].addEventListener("click", () => {
-        let page = navLinks[i].getAttribute("aria-controls").split("v-pills-")[1];
-        console.log(page);
-        history.pushState('', '', page);
-      })
-    }
-
     function getTimeRemaining(endtime) {
       let t = Date.parse(endtime) - Date.parse(new Date());
       let seconds = Math.floor((t / 1000) % 60);
@@ -295,6 +248,50 @@
     }
     let deadline = "May 31 2022 12:00:00 GMT+0300";
     initializeClock("countdown", deadline);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  <script>
+    let path = location.pathname.split("/")[2];
+    let user;
+    async function getUser() {
+      let response = await fetch("/php/lk_obr.php");
+      return response.json();
+    }
+    addEventListener('popstate', event => {
+      let pathPop = location.pathname.split("/")[2]
+      if (pathPop == "profile") {
+        $('#profileTab').tab('show');
+        console.log(pathPop);
+      } else if (pathPop == "messages") {
+        $('#messagesTab').tab('show');
+        console.log(pathPop);
+      } else if (pathPop == "settings") {
+        $('#settingsTab').tab('show');
+        console.log(pathPop);
+      }
+    });
+    if (path == "profile") {
+      getUser().then(user => {
+        userName.innerText = `${user.name} ${user.lastname} ${patronymic}`
+      });
+      console.log(user);
+      $('#v-pills-profile').tab('show');
+    } else if (path == "messages") {
+      $('#v-pills-messages').tab('show');
+
+      $('#v-pills-settings').tab('show');
+    }
+    document.getElementById(path + "Tab").classList.add("active");
+    let navLinks = document.querySelectorAll(".nav-link");
+    for (let i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener("click", () => {
+        let page = navLinks[i].getAttribute("aria-controls").split("v-pills-")[1];
+        console.log(page);
+        history.pushState('', '', page);
+      })
+    }
   </script>
 </body>
 

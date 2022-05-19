@@ -10,7 +10,7 @@ if ($mysqli == false) {
   $email = trim(mb_strtolower($_POST['email']));
   $pass = trim($_POST['password']);
 
-  $result = $mysqli->query("SELECT * FROM `users` WHERE `email` = '$email'/*   AND `password` = '$pass' */");
+  $result = $mysqli->query("SELECT * FROM `users` WHERE `email` = '$email'");
   $result = $result->fetch_assoc();
 
   if (password_verify($pass, $result['password'])) {
