@@ -70,18 +70,18 @@
         <div class="col-md-1 col-2 flex-grow-1 header-logo">
           <img name="logo" class="img-fluid" src="/img/100x100.png" alt="logo taxi" />
         </div>
-        <div class="col-lg-3 col-1">
+        <div class="col">
           <strong class="font-weight-bolder text-left">Аренда автомобилей такси</strong><br />
           <strong class="font-weight-lighter">Выгодные и честные условия</strong>
         </div>
-        <div class="col-mb-3 col-4">
-          <div class="contacts text-right">
+        <div class="col">
+          <div class="contacts">
             <div class="contacts__text">
               <strong>График работы:</strong> <br />ежедневно с 11:00 до 20:00
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-2">
+        <div class="col">
           <div class="contacts text-left">
             <a href="tel:+79251001388" class="phone">+7 (925) 100-13-88</a>
             <br /><a href="https://wa.me/+79251001388" class="contacts__whatsapp" target="_blank">
